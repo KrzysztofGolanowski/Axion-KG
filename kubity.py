@@ -6,19 +6,19 @@ X = np.array([[0, 1], [1, 0]], dtype=complex)
 Z = np.array([[1, 0], [0, -1]], dtype=complex)
 H = (1 / np.sqrt(2)) * np.array([[1, 1], [1, -1]], dtype=complex)
 
-def Ry(theta):
-    """"""
-    return np.array([
-        [np.cos(theta / 2), -np.sin(theta / 2)],
-        [np.sin(theta / 2), np.cos(theta / 2)]
-    ], dtype=complex)
-
 CNOT = np.array([
     [1, 0, 0, 0],
     [0, 1, 0, 0],
     [0, 0, 0, 1],
     [0, 0, 1, 0]
 ], dtype=complex)
+
+def Ry(theta):
+    """Definiuje bramkę rotacji kubitu wokół osi Y o kąt theta."""
+    return np.array([
+        [np.cos(theta / 2), -np.sin(theta / 2)],
+        [np.sin(theta / 2), np.cos(theta / 2)]
+    ], dtype=complex)
 
 
 def measure(state):
